@@ -87,7 +87,7 @@ function DrumMachine() {
 
 	const playSound = (item) => {
 		console.log(item.id)
-		const sound = document.getElementById(item.id);
+		const sound = document.getElementById(item.keyTrigger);
 		console.log(sound)
 		sound.currentTime = 0;
 		sound.play();
@@ -96,14 +96,14 @@ function DrumMachine() {
 
 	const pads = sounds.map( (item) => {
 		return <div 
-			id={item.keyTrigger} 
+			id={item.id} 
 			className="drum-pad" 
-			key={item.keyTrigger} 
+			key={item.id} 
 			onClick={()=>playSound(item)}
 		>
 			<span>{item.keyTrigger}</span>
 			
-			<audio className="clip" id={item.id} src={item.sound} hidden />
+			<audio className="clip" id={item.keyTrigger} src={item.sound} hidden />
 		</div>
 	})
 
