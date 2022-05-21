@@ -88,8 +88,6 @@ function DrumMachine() {
 	const playSound = (item) => {
 		console.log(item.id)
 		const sound = document.getElementById(item.keyTrigger);
-		console.log(sound)
-		sound.currentTime = 0;
 		sound.play();
 		setDisplay(item.id)
 	}
