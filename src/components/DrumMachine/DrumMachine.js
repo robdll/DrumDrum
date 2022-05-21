@@ -108,7 +108,7 @@ function DrumMachine() {
 
 	return (
 		<div className="DrumMachine" id="drum-machine">
-			<div id="display"></div>
+			<div id="display"> {display} </div>
 			{pads}
 		</div>
 		);
