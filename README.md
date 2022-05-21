@@ -1,4 +1,4 @@
-# TomaClock
+# DrumDrum
 
 Demo can be found at [Here](https://robertodilillo.dev/DrumDrum). 
 
