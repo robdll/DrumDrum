@@ -1,62 +1,63 @@
 import './DrumMachine.css';
-import { useState, useRef } from 'react';
-const alarm = require('./../../resources/alarm.wav');
+// import { useState, useRef } from 'react';
+// const alarm = require('./../../resources/alarm.wav');
 
 function DrumMachine() {
-	const audRef = useRef(null);
+	// const audRef = useRef(null);
 
-	const [settings, setSettings] = useState({session: 25, break: 5});
-	const [timer, setTimer] = useState({
-		minutes: '25', 
-		seconds: '00', 
-		active: false, 
-		isBreak: false
-	});
+	// const [settings, setSettings] = useState({session: 25, break: 5});
+	// const [timer, setTimer] = useState({
+	// 	minutes: '25', 
+	// 	seconds: '00', 
+	// 	active: false, 
+	// 	isBreak: false
+	// });
 	
-	const playAudio = () => {
-		console.log('here', audRef)
-		audRef.current.play();
-	}
+	// const playAudio = () => {
+	// 	console.log('here', audRef)
+	// 	audRef.current.play();
+	// }
 
 	  
-	const toggleTimer = (value) => {
-		setTimer({ ...timer, active: value})
-	}
+	// const toggleTimer = (value) => {
+	// 	setTimer({ ...timer, active: value})
+	// }
 
-	const refreshTimer = () => {
-		audRef.current.pause();
-		setTimer({ 
-			minutes: '25',
-			seconds: '00', 
-			active: false,
-			isBreak: false
-		})
-		setSettings({session: 25, break: 5});
-	}
+	// const refreshTimer = () => {
+	// 	audRef.current.pause();
+	// 	setTimer({ 
+	// 		minutes: '25',
+	// 		seconds: '00', 
+	// 		active: false,
+	// 		isBreak: false
+	// 	})
+	// 	setSettings({session: 25, break: 5});
+	// }
 
-	const editSettings =  (type, val) => {
-		if(timer.active) return
-		const newSettings = { ...settings }
-		newSettings[type] +=val;
-		if(newSettings[type] > 60) {
-			newSettings[type] = 60
-		}
-		if(newSettings[type] < 1) {
-			newSettings[type] = 1
-		}
-		setSettings(newSettings)
-		if(type === 'session' && !timer.isBreak) {
-			setTimer({
-				...timer,
-				minutes: newSettings[type],
-				seconds: '00'
-			})
-		}
+	// const editSettings =  (type, val) => {
+	// 	if(timer.active) return
+	// 	const newSettings = { ...settings }
+	// 	newSettings[type] +=val;
+	// 	if(newSettings[type] > 60) {
+	// 		newSettings[type] = 60
+	// 	}
+	// 	if(newSettings[type] < 1) {
+	// 		newSettings[type] = 1
+	// 	}
+	// 	setSettings(newSettings)
+	// 	if(type === 'session' && !timer.isBreak) {
+	// 		setTimer({
+	// 			...timer,
+	// 			minutes: newSettings[type],
+	// 			seconds: '00'
+	// 		})
+	// 	}
 		
-	}
+	// }
 
 	return (
 		<div className="DrumMachine">
+
 			{/* <h2 className="title" id="timer-label">{settings.isBreak ? 'Break' : 'Session'}</h2>
 			<div className="session-container">
 				<div className='session-value' id="time-left">{timer.minutes}:{timer.seconds}</div>
