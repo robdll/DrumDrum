@@ -13,20 +13,8 @@ const sound9 = require('./../../resources/RP4_KICK_1.mp3');
 
 function DrumMachine() {
 
-	const [display, setDisplay] = useState('');
+	const [display, setDisplay] = useState('Press a Pad to start');
 	const sounds = [
-		{
-            keyCode: 67,
-            keyTrigger: "C",
-            id: "Closed-HH",
-			sound: sound1
-        },
-		{
-            keyCode: 68,
-            keyTrigger: "D",
-            id: "Open-HH",
-			sound: sound2
-        },
         {
             keyCode: 81,
             keyTrigger: "Q",
@@ -57,6 +45,12 @@ function DrumMachine() {
             id: "Clap",
 			sound: sound7
         },
+		{
+			keyCode: 68,
+            keyTrigger: "D",
+            id: "Open-HH",
+			sound: sound2
+        },
         {
             keyCode: 90,
             keyTrigger: "Z",
@@ -68,7 +62,13 @@ function DrumMachine() {
             keyTrigger: "X",
             id: "Kick",
 			sound: sound9
-        }
+        },
+		{
+			keyCode: 67,
+			keyTrigger: "C",
+			id: "Closed-HH",
+			sound: sound1
+		}
     ]  
 
 	const onKeyDownhandler = ({keyCode}) => {
@@ -86,21 +86,22 @@ function DrumMachine() {
 	}, []);
 
 	const playSound = (item) => {
+		console.log(item.id)
 		const sound = document.getElementById(item.id);
+		console.log(sound)
 		sound.currentTime = 0;
 		sound.play();
 		setDisplay(item.id)
 	}
 
-	const pads = sounds.map( (item, idx) => {
+	const pads = sounds.map( (item) => {
 		return <div 
 			id={item.keyTrigger} 
 			className="drum-pad" 
 			key={item.keyTrigger} 
 			onClick={()=>playSound(item)}
-			tabIndex={idx}
 		>
-			<span>{item.id}</span>
+			<span>{item.keyTrigger}</span>
 			
 			<audio className="clip" id={item.id} src={item.sound} hidden />
 		</div>

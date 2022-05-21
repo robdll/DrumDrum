@@ -1,9 +1,6 @@
-/* 
-red   F84047
-orange   FCAE62
-lime   EFFE9D
-whity   FDFEFC
- */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
