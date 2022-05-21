@@ -33,6 +33,7 @@
     font-size: 2rem;
     color: #dddddd;
     text-shadow: 2px 2px #000000;
+    cursor: pointer;
 }
 
 #Heater-1 {
