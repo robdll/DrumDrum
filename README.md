@@ -7,10 +7,10 @@ Project bootstrapped with [Create React App](https://github.com/facebook/create-
 # Installation
 
 1. clone the repository
-> git clone git@github.com:robdll/tomaclock.git
+> git clone git@github.com:robdll/DrumDrum.git
 
 2. instal dependency
-> cd TomaClock
+> cd DrumDrum
 > npm i
 
 3. run the project

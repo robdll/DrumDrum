@@ -83,7 +83,7 @@ function DrumMachine() {
 		return () => {
 		  document.removeEventListener('keydown', onKeyDownhandler);
 		};
-	}, []);
+	});
 
 	const playSound = (item) => {
 		console.log(item.id)
